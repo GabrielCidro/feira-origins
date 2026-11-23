@@ -457,7 +457,8 @@ function openSheet(title,node,wide){
 }
 function closeSheet(){dlg.classList.remove('show');setTimeout(()=>{if(!dlg.classList.contains('show')&&dlg.open)dlg.close()},reduce?0:220)}
 dlg.addEventListener('cancel',e=>{e.preventDefault();closeSheet()});
-dlg.addEventListener('click',e=>{if(e.target===dlg)closeSheet()});
+// fora da janela só fecha com dois cliques: um clique sem querer não perde o que a pessoa estava preenchendo
+dlg.addEventListener('dblclick',e=>{if(e.target===dlg)closeSheet()});
 function copyText(t){
   return (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{
     const ta=mk('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0';document.body.append(ta);ta.select();
