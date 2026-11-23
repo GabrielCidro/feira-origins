@@ -2,7 +2,7 @@
 
 A feira livre que falta no **Habbo Hotel: Origins**. Anuncie seus raros e mobis com um print, o nome e o preço, e encontre o que você procura.
 
-**Site:** https://gabrielcidro.github.io/feira-origins/
+**Site:** https://feiraorigins.com/
 
 ## Como funciona
 
