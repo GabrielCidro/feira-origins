@@ -324,11 +324,11 @@ footer .link{color:#ffe17a}
 </header>
 
 <div class="wrap">
-  <a class="logo" href="#feira" aria-label="Feira Origins, início"><img src="img/logo-feira.png" width="400" height="438" alt="Feira Origins"></a>
+  <a class="logo" href="#feira" aria-label="Feira Origins, início"><img src="img/logo-feira.png?v=2" width="400" height="438" alt="Feira Origins"></a>
 
   <div class="layout">
     <aside class="left">
-      <div class="bp pic"><img src="img/raros-moedas.png" alt="Raros do Habbo Origins" loading="lazy"><div><h3>Tem raro parado?</h3><p>Coloque na feira: print, nome e preço.</p><button class="hb go" type="button" data-ann>+ Anunciar</button></div></div>
+      <div class="bp pic"><img src="img/raros-moedas.png?v=2" alt="Raros do Habbo Origins" loading="lazy"><div><h3>Tem raro parado?</h3><p>Coloque na feira: print, nome e preço.</p><button class="hb go" type="button" data-ann>+ Anunciar</button></div></div>
       <div class="op">
         <h3>Novo na Feira Origins?</h3>
         <p style="margin:0 0 10px">No Origins não tem feira livre: aqui tem. Anuncie seus raros e mobis e encontre o que você procura.</p>
@@ -381,7 +381,7 @@ footer .link{color:#ffe17a}
             </div>
           </div>
 
-          <img class="strip" src="img/maquina.png" alt="" loading="lazy">
+          <img class="strip" src="img/maquina.png?v=2" alt="" loading="lazy">
           <div class="sec"><h2 class="h2">Categorias</h2><button class="link" type="button" id="allBtn" style="color:#fff36b">Ver tudo</button></div>
           <div class="tiles" id="tiles"></div>
           </div>
@@ -613,7 +613,7 @@ function deleteSheet(){
 $('privBtn').onclick=privSheet;
 $('leftLogin').onclick=()=>me?toast('Você já entrou com o Discord'):loginSheet(null);
 function howSheet(){
-  const n=mk('div','priv'),ol=mk('ol'),hi=mk('img','shimg');hi.src='img/yellow-maze.png';hi.alt='';n.append(hi);
+  const n=mk('div','priv'),ol=mk('ol'),hi=mk('img','shimg');hi.src='img/yellow-maze.png?v=2';hi.alt='';n.append(hi);
   ['Entre com o Discord (a mesma conta do Habbo Music).','Tire um print do raro ou mobi no Origins com o seu boneco do lado dele, no quarto.','Clique em Anunciar, cole o print (Ctrl+V), escreva o nome e o preço em moedas. Pronto: já está na feira.','Quem quiser comprar clica em Negociar e fala com você no Discord. A moderação confere o print e dá o selo de print conferido.','Feche a troca dentro do jogo, pela janela de troca, conferindo o item antes de aceitar.'].forEach(x=>ol.append(mk('li',null,x)));
   n.append(ol);const ac=mk('div','sh-a');ac.append(btn('hb','Fechar',closeSheet),btn('hb go','+ Anunciar meu raro',()=>{closeSheet();annStart()}));n.append(ac);
   openSheet('Como funciona',n);
