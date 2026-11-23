@@ -211,9 +211,8 @@ textarea.hin{height:auto;padding:8px 10px;resize:vertical}
 dialog{width:min(580px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:0;background:none;overflow:visible}
 dialog::backdrop{background:#0e2a3ccc}
 .sheet{display:flex;flex-direction:column;max-height:calc(100dvh - 24px);border:3px solid var(--blue-b);border-radius:14px;background:var(--cream);box-shadow:0 6px 0 #00000059;overflow:hidden;opacity:0;transform:translateY(10px) scale(.98);transition:opacity .2s,transform .2s}
-.sheet.wide{width:min(860px,calc(100vw - 24px))}
 dialog.show .sheet{opacity:1;transform:none}
-dialog:has(.sheet.wide){width:auto}
+dialog.wide{width:min(860px,calc(100% - 24px))}
 .win-t{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 8px 6px 18px;background:var(--top);color:#fff;font:500 19px var(--cond);text-transform:uppercase;box-shadow:inset 0 -3px 0 #00000033}
 .win-t>span{flex:1}
 .wx{display:grid;place-items:center;width:30px;height:30px;padding:0;border:2px solid #5a0d09;border-radius:7px;background:linear-gradient(#f5877c,#c9302c);color:#fff;font:700 14px Ubuntu;cursor:pointer}
@@ -451,7 +450,7 @@ let tt;
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
 const dlg=$('dlg'),sh=$('sheet');
 function openSheet(title,node,wide){
-  sh.innerHTML='';sh.className='sheet'+(wide?' wide':'');
+  sh.innerHTML='';sh.className='sheet'+(wide?' wide':'');dlg.classList.toggle('wide',!!wide);
   const h=mk('div','win-t');h.append(mk('span',null,title));
   const x=btn('wx','✕',closeSheet);x.setAttribute('aria-label','Fechar');h.append(x);
   const b=mk('div','sh-b');b.append(node);sh.append(h,b);
