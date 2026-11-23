@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Feira Origins · Compre e venda raros do Habbo Origins</title>
+<meta name="description" content="A feira livre que falta no Habbo Origins: anuncie seus raros e mobis com um print, o nome e o preço, e encontre o que você procura. Tudo em moedas, negociado pelo Discord.">
+<link rel="canonical" href="https://gabrielcidro.github.io/feira-origins/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Feira Origins">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://gabrielcidro.github.io/feira-origins/">
+<meta property="og:title" content="Feira Origins · Compre e venda raros do Habbo Origins">
+<meta property="og:description" content="Anuncie seus raros e mobis do Habbo Origins com um print, o nome e o preço. Tudo em moedas, negociado pelo Discord.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2d5672">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://kyrcejahvepkcbgmmlzk.supabase.co wss://kyrcejahvepkcbgmmlzk.supabase.co https://images.habbo.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath d='M1 1h14v1H1zM0 4h16v1H0zM0 8h16v1H0zM0 14h16v1H0z' fill='%231b1b1b'/%3E%3Cpath d='M2 2h2v2H2zm4 0h2v2H6zm4 0h2v2h-2z' fill='%23e0302a'/%3E%3Cpath d='M4 2h2v2H4zm4 0h2v2H8zm4 0h2v2h-2z' fill='%23fff'/%3E%3Cpath d='M1 9h14v5H1z' fill='%23c98a4b'/%3E%3Cpath d='M5 6h2v2H5z' fill='%23ffd21f'/%3E%3Cpath d='M10 6h2v2h-2z' fill='%236fbf3a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Silkscreen:wght@400;700&family=Ubuntu+Condensed&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Clima do site do Habbo Origins: fundo azul-petróleo listrado, painel laranja com abas de pasta,
+   caixinha creme de novidades e painéis azuis na lateral */
+:root{--sea:#3b6886;--sea2:#37627f;--top:#2d5672;--top-b:#1c3d54;--blue:#2f5a77;--blue-b:#163850;--blue-l:#4f7d9b;--org:#eea326;--org-l:#f8c457;--org-b:#7a4a00;--tab:#f2a63b;--tab-on:#ffc83a;--cream:#fffbdc;--cream-b:#3f2a00;--brown:#3a2600;--red:#c3161c;--green:#3fae2a;--green-d:#1f6e12;--bad:#c9302c;--cond:'Ubuntu Condensed','Ubuntu',sans-serif;--px:'Silkscreen',monospace}
+*{box-sizing:border-box}
+html{background:var(--sea);overflow-x:clip}
+body{margin:0;min-height:100vh;color:var(--brown);font:15px/1.4 Ubuntu,system-ui,sans-serif;background:repeating-linear-gradient(135deg,var(--sea) 0 3px,var(--sea2) 3px 6px)}
+button,input,select,textarea{font-family:inherit}
+:focus-visible{outline:3px solid #ffd21f;outline-offset:2px}
+[hidden]{display:none!important}
+img,.spr{image-rendering:pixelated}
+.spr{display:block;flex:none}
+.ic{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- barra de cima ---------- */
+.top{position:relative;z-index:5;height:66px;border-bottom:3px solid var(--top-b);background:var(--top);box-shadow:0 2px 0 #00000026}
+.top .in{max-width:1460px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.me{display:flex;align-items:center;gap:10px;height:40px;max-width:230px;padding:0 16px 0 0;border:2px solid #0f2a3c;border-radius:22px;background:#173a52;color:#fff;font:500 15px var(--cond);cursor:pointer;overflow:hidden;white-space:nowrap}
+.me img,.me .av{width:44px;height:44px;margin:-4px 0 -4px -4px;border:3px solid #0f2a3c;border-radius:50%;background:#5f8cab;flex:none;image-rendering:auto;display:grid;place-items:center;color:#fff}
+.me span{overflow:hidden;text-overflow:ellipsis}
+.go-btn{position:relative;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 26px 0 14px;border:2px solid #0d3d08;border-right:0;border-radius:6px 0 0 6px;background:linear-gradient(#5fd03f,#2f9a1d);color:#fff;font:700 16px var(--cond);text-transform:uppercase;letter-spacing:.3px;text-shadow:1px 1px 0 #145209;cursor:pointer}
+.go-btn::after{content:"";position:absolute;right:-20px;top:-2px;width:0;height:0;border-style:solid;border-width:20px 0 20px 20px;border-color:transparent transparent transparent #0d3d08}
+.go-btn::before{content:"";position:absolute;right:-17px;top:0;z-index:1;width:0;height:0;border-style:solid;border-width:18px 0 18px 18px;border-color:transparent transparent transparent #46b52e}
+.go-btn.dc{border-color:#262c80;background:linear-gradient(#8b96ff,#5865f2);text-shadow:1px 1px 0 #262c80}
+.go-btn.dc::after{border-left-color:#262c80}.go-btn.dc::before{border-left-color:#6f7bf8}
+.go-btn .ic{width:18px;height:18px}
+
+/* ---------- logo pendurado (cartão amarelo) ---------- */
+.wrap{position:relative;max-width:1460px;margin:0 auto;padding:0 24px}
+.logo{position:absolute;left:62px;top:-3px;z-index:6;width:170px;filter:drop-shadow(4px 6px 0 #00000040)}
+.logo img{display:block;width:100%;height:auto}
+.ftag{position:absolute;left:-8px;bottom:-16px;padding:3px 14px 3px 10px;border:2px solid #3a2600;background:#c3161c;color:#fff;font:700 17px var(--cond);letter-spacing:2px;transform:rotate(-14deg);clip-path:polygon(0 0,100% 0,92% 50%,100% 100%,0 100%);box-shadow:3px 3px 0 #00000040}
+
+/* ---------- colunas ---------- */
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr) 196px;gap:28px;padding-top:20px}
+.right{padding-top:76px}
+.bp.sky{padding:12px;display:grid;justify-items:center}
+.bp.sky img{display:block;border:2px solid var(--blue-b);border-radius:4px}
+.bp.pic{padding:0;overflow:hidden}
+.bp.pic img{display:block;width:100%;height:120px;object-fit:cover;object-position:78% 50%;border-bottom:3px solid var(--blue-b)}
+.bp.pic>div{padding:14px 16px 16px}
+.bp.pic p{margin:0 0 10px}
+.bp .wide{display:block;width:100%;margin-bottom:12px;border:2px solid var(--blue-b);border-radius:6px}
+.dono{position:relative;display:grid;justify-items:center;width:110px;padding-top:30px}
+.dono img{display:block;width:34px;height:82px}
+.dono i{position:absolute;top:0;left:50%;transform:translateX(-50%);padding:4px 8px;border:2px solid var(--brown);border-radius:8px;background:#fff;color:var(--brown);font:700 12px var(--cond);font-style:normal;white-space:nowrap}
+.dono i::after{content:"";position:absolute;left:50%;bottom:-12px;margin-left:-5px;border:5px solid transparent;border-top-color:var(--brown)}
+.strip{display:block;width:100%;height:150px;margin-top:20px;border:2px solid var(--brown);border-radius:12px;object-fit:cover;object-position:50% 50%}
+.emptyimg{width:min(360px,100%);border:2px solid var(--brown);border-radius:10px}
+.shimg{display:block;width:100%;max-height:200px;margin-bottom:12px;border:2px solid var(--brown);border-radius:10px;object-fit:cover}
+.by{display:inline-flex;align-items:flex-end;gap:8px;margin-bottom:6px;color:#fff;font:700 15px var(--cond)}
+.by img{width:17px;height:41px}
+.kind{position:absolute;top:8px;right:8px;padding:3px 8px;border:2px solid var(--brown);border-radius:6px;background:#2f5a77;color:#fff;font:700 12px var(--cond);text-transform:uppercase}
+.kind.raro{background:#7b3fc4}
+.left{display:grid;gap:22px;align-content:start;padding-top:210px}
+.center{min-width:0}
+
+/* painéis azuis */
+.bp{padding:18px;border:3px solid var(--blue-b);border-radius:14px;background:var(--blue);box-shadow:inset 0 0 0 2px var(--blue-l),0 3px 0 #00000033;color:#e9f3fa;font-size:14px}
+.bp h3{margin:0 0 10px;color:#fff;font:700 17px var(--cond);text-transform:uppercase;letter-spacing:.3px}
+.bp ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.bp b{color:#ffe17a}
+.seal{display:grid;justify-items:center;gap:6px;padding:4px 0 0;border:0;background:none;color:#ffe17a;font:700 16px var(--cond);text-decoration:underline;cursor:pointer;width:100%}
+.seal svg{width:120px;height:120px;filter:drop-shadow(0 3px 0 #00000040)}
+.op{padding:16px 18px;border:3px solid var(--org-b);border-radius:14px;background:var(--org);box-shadow:inset 0 0 0 2px var(--org-l),0 3px 0 #00000033;font-size:14.5px}
+.op h3{margin:0 0 10px;color:#fff;font:700 18px var(--cond);text-align:center;text-shadow:1px 1px 0 #00000059}
+.op ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.op a,.op .link{color:#fff36b;font-weight:700}
+.stat{display:flex;align-items:center;gap:12px}
+.stat b{display:block;font:700 30px/1 var(--cond);color:#ffe17a}
+.mini{display:flex;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff2e;color:#e9f3fa;text-decoration:none;font-size:13px}
+.mini b{display:block;color:#fff;font:700 15px var(--cond)}
+
+/* ---------- abas de pasta + painel laranja ---------- */
+.tabs{display:flex;justify-content:safe center;gap:6px;padding:0 20px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{position:relative;display:flex;align-items:center;gap:7px;margin-bottom:-3px;padding:8px 20px 9px;border:3px solid var(--org-b);border-bottom:0;border-radius:12px 12px 0 0;background:var(--tab);color:var(--brown);font:500 17px var(--cond);text-transform:uppercase;letter-spacing:.2px;cursor:pointer;white-space:nowrap;box-shadow:inset 0 2px 0 #ffffff59}
+.tab:hover{background:#f7b549}
+.tab[aria-current="page"]{z-index:1;background:var(--tab-on);padding-bottom:12px}
+.tab .spr{margin:-4px 0}
+.tab b{min-width:20px;padding:0 5px;border-radius:10px;background:var(--bad);color:#fff;font:700 12px/20px Ubuntu;text-align:center}
+.panel{position:relative;padding:16px;border:3px solid var(--org-b);border-radius:16px;background:var(--org);box-shadow:inset 0 0 0 2px var(--org-l),0 4px 0 #00000033}
+
+/* banner de quartinhos */
+.banner{display:grid;grid-template-columns:215fr 254fr 254fr 254fr;gap:4px;padding:4px;border:2px solid var(--brown);border-radius:12px;background:var(--cream)}
+.banner>img{display:block;width:100%;height:auto;border:2px solid var(--brown);border-radius:9px}
+
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;margin-top:18px}
+.h2{margin:0 0 12px;color:#fff;font:500 25px/1.1 var(--cond);text-transform:uppercase;text-shadow:1px 1px 0 #00000040}
+.h3{margin:0 0 8px;color:#fff;font:500 17px var(--cond);text-transform:uppercase;text-shadow:1px 1px 0 #00000033}
+.blk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:14px 0;border-top:1px solid #c47f0e}
+.blk:first-of-type{border-top:0;padding-top:0}
+.blk p{margin:0}
+.today{position:relative;padding:14px 16px 16px;border:2px solid var(--brown);border-radius:4px;background:var(--cream);box-shadow:3px 3px 0 #00000033}
+.today::before,.today::after{content:"";position:absolute;left:-2px;right:-2px;height:6px;background:radial-gradient(circle at 4px -1px,transparent 4px,var(--cream) 4.5px) 0 0/9px 6px repeat-x}
+.today::before{top:-6px;transform:scaleY(-1)}.today::after{bottom:-6px}
+.today-t{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #c5a800}
+.today-t span{color:var(--red);font:700 italic 17px var(--px);letter-spacing:1px;transform:skewX(-10deg)}
+.today-t i{flex:1;height:12px;background:repeating-linear-gradient(90deg,#d9cf9a 0 1px,transparent 1px 3px)}
+.onews{display:grid;gap:12px}
+.onews a{display:grid;grid-template-columns:60px minmax(0,1fr);gap:10px;align-items:start;color:inherit;text-decoration:none}
+.onews img{width:60px;height:60px;border:2px solid var(--brown);border-radius:6px;background:#1d1d1d}
+.onews b{color:var(--red);font:700 15px/1.15 var(--cond);text-transform:uppercase;text-decoration:underline}
+.onews a:hover b{color:#8a0d11}
+.onews small{display:block;margin-top:2px;font-size:13px;color:#3a2a00}
+.onews em{display:inline-block;margin-right:6px;padding:0 6px;border-radius:4px;background:#7b3fc4;color:#fff;font:700 11px/17px var(--cond);font-style:normal;text-decoration:none;vertical-align:1px}
+#newsBox{margin-top:18px}
+.news{display:grid;gap:10px}
+.news div{font-size:14.5px}
+.news button{padding:0;border:0;background:none;color:var(--red);font:700 16px var(--cond);text-transform:uppercase;text-decoration:underline;cursor:pointer;text-align:left}
+.news small{display:block;color:#3a2a00}
+
+/* categorias, busca e cards */
+.sec{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 10px;padding-top:16px;border-top:1px solid #c47f0e}
+.sec .h2{margin:0;font-size:22px}
+.sec small{color:#fff;font:500 15px var(--cond);text-shadow:1px 1px 0 #00000040}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.tile{position:relative;display:grid;place-items:center;min-height:58px;gap:5px;padding:10px 4px 8px;border:2px solid var(--brown);border-radius:10px;background:var(--cream);color:var(--brown);font:500 14px var(--cond);cursor:pointer;box-shadow:0 3px 0 #00000026;transition:transform .1s}
+.tile:hover{transform:translateY(-2px)}
+.tile[aria-pressed="true"]{background:#fff;box-shadow:0 0 0 3px #fff36b,0 3px 0 #00000026}
+.tile i{position:absolute;top:5px;right:6px;min-width:20px;padding:0 5px;border-radius:9px;background:var(--red);color:#fff;font:700 11px/18px Ubuntu;font-style:normal}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 12px}
+.search{flex:1 1 220px;display:flex;align-items:center;gap:7px;padding:0 12px;border:2px solid var(--brown);border-radius:8px;background:#fff}
+.search input{flex:1;min-width:0;height:36px;border:0;background:none;font-size:15px;outline:0}
+.hsel,.hin{height:40px;padding:0 10px;border:2px solid var(--brown);border-radius:8px;background:#fff;color:#111;font-size:15px}
+textarea.hin{height:auto;padding:8px 10px;resize:vertical}
+.hin:focus,.hsel:focus,.search:focus-within{box-shadow:0 0 0 3px #fff36b;outline:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;border:2px solid var(--brown);border-radius:12px;background:var(--cream);overflow:hidden;cursor:pointer;box-shadow:3px 3px 0 #00000033;transition:transform .12s}
+.card:hover{transform:translateY(-3px)}
+.shot{position:relative;aspect-ratio:16/10;border-bottom:2px solid var(--brown);background:#1d1d1d}
+.shot img{width:100%;height:100%;object-fit:cover}
+.card.sold .shot img{filter:grayscale(1) brightness(.75)}
+.pill{position:absolute;top:8px;left:8px;padding:3px 8px;border:2px solid var(--brown);border-radius:6px;font:700 12px var(--cond);text-transform:uppercase}
+.pill.ok{background:#ffd21f;color:var(--brown)}
+.pill.wait{background:#fff;color:#555}
+.pill.sold{background:var(--bad);color:#fff}
+.badge{position:absolute;top:6px;right:6px;display:grid;place-items:center;width:36px;height:36px;border:2px solid var(--brown);border-radius:8px;background:var(--cream)}
+.c-b{display:grid;gap:3px;padding:9px 12px 11px}
+.c-b h3{margin:0;color:var(--red);font:700 17px/1.15 var(--cond);text-transform:uppercase;overflow-wrap:anywhere}
+.price{display:inline-flex;align-items:center;gap:6px;font:700 16px Ubuntu;color:#6b4300}
+.price small{font-weight:400;color:#8a6a2a;font-size:13px}
+.who{display:flex;align-items:center;gap:7px;margin-top:3px;font-size:13px;color:#5a4410;min-width:0}
+.who img,.who .av{width:22px;height:22px;border-radius:50%;flex:none;image-rendering:auto;background:#e6d9a8;display:grid;place-items:center}
+.who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.coin{display:inline-block;width:14px;height:14px;border:1px solid #6b4400;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff7b0,#ffd21f 45%,#e2a400);flex:none}
+.empty{display:grid;justify-items:center;gap:8px;padding:26px 12px;color:var(--brown);text-align:center;grid-column:1/-1;font-size:15px}
+
+/* botões */
+.hb{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:6px 16px;border:2px solid var(--brown);border-radius:8px;background:linear-gradient(#fffdf0,#f1e3a6);color:var(--brown);font:700 15px var(--cond);text-transform:uppercase;letter-spacing:.2px;text-decoration:none;cursor:pointer;box-shadow:inset 0 -3px 0 #0000001f}
+.hb:active{transform:translateY(1px);box-shadow:inset 0 2px 0 #0000001f}
+.hb:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.hb.go{border-color:#0d3d08;background:linear-gradient(#5fd03f,#2f9a1d);color:#fff;text-shadow:1px 1px 0 #145209}
+.hb.blue{border-color:var(--blue-b);background:linear-gradient(#6a9bbd,#2f5a77);color:#fff}
+.hb.red{border-color:#5a0d09;background:linear-gradient(#f5877c,#c9302c);color:#fff;text-shadow:1px 1px 0 #5a0d09}
+.hb.dc{border-color:#262c80;background:linear-gradient(#8b96ff,#5865f2);color:#fff;text-shadow:1px 1px 0 #262c80}
+.hb.sm{min-height:32px;padding:3px 11px;font-size:14px}
+.link{padding:0;border:0;background:none;color:var(--red);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+
+/* listas (meus e moderação) */
+.rows{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px;border:2px solid var(--brown);border-radius:10px;background:var(--cream)}
+.row .th{width:76px;height:56px;border:2px solid var(--brown);border-radius:6px;background:#1d1d1d;object-fit:cover;cursor:zoom-in}
+.row b{display:block;overflow-wrap:anywhere;font:700 16px var(--cond);color:var(--red);text-transform:uppercase}
+.row small{color:#5a4410}
+.acts{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.st{display:inline-block;margin-top:4px;padding:2px 7px;border-radius:5px;font:700 12px var(--cond);text-transform:uppercase}
+.st.ok{background:#d9f2c9;color:#2b6400}.st.wait{background:#fff0b8;color:#7a5600}.st.bad{background:#fde0dd;color:#8e1d15}.st.sold{background:#e6e2d2;color:#555}
+.lim{padding:9px 12px;border:2px solid var(--brown);border-radius:10px;background:#d9f2c9;color:#2b6400;font-weight:700;font-size:14px}
+.lim.full{background:#fde0dd;color:#8e1d15}
+.mq{display:grid;grid-template-columns:220px minmax(0,1fr);gap:12px;padding:10px;border:2px solid var(--brown);border-radius:10px;background:var(--cream)}
+.mq img{width:100%;border:2px solid var(--brown);border-radius:6px;background:#1d1d1d;cursor:zoom-in}
+.mq b{font:700 16px var(--cond);color:var(--red);text-transform:uppercase}
+.mq ul{margin:6px 0 10px;padding-left:18px;font-size:13.5px}
+.vis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.vbox{display:grid;padding:10px 12px;border:2px solid var(--brown);border-radius:10px;background:var(--cream)}
+.vbox span{font:700 14px var(--cond);color:var(--red);text-transform:uppercase}
+.vbox b{font-size:20px}
+.vbox small{color:#5a4410;font-size:12.5px}
+.vbars{grid-column:1/-1;display:flex;align-items:flex-end;gap:3px;height:90px;padding:6px 8px 0;border:2px solid var(--brown);border-radius:10px;background:var(--cream)}
+.vbars i{flex:1;min-height:2px;border-radius:2px 2px 0 0;background:var(--blue)}
+.vnote{grid-column:1/-1;font-size:13px;color:#3a2600}
+.ufind{display:flex;gap:8px;margin-bottom:8px}
+.vh{margin:22px 0 10px}
+.vh:first-child{margin-top:0}
+
+/* janela por cima */
+dialog{width:min(580px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:0;background:none;overflow:visible}
+dialog::backdrop{background:#0e2a3ccc}
+.sheet{display:flex;flex-direction:column;max-height:calc(100dvh - 24px);border:3px solid var(--blue-b);border-radius:14px;background:var(--cream);box-shadow:0 6px 0 #00000059;overflow:hidden;opacity:0;transform:translateY(10px) scale(.98);transition:opacity .2s,transform .2s}
+.sheet.wide{width:min(860px,calc(100vw - 24px))}
+dialog.show .sheet{opacity:1;transform:none}
+dialog:has(.sheet.wide){width:auto}
+.win-t{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 8px 6px 18px;background:var(--top);color:#fff;font:500 19px var(--cond);text-transform:uppercase;box-shadow:inset 0 -3px 0 #00000033}
+.win-t>span{flex:1}
+.wx{display:grid;place-items:center;width:30px;height:30px;padding:0;border:2px solid #5a0d09;border-radius:7px;background:linear-gradient(#f5877c,#c9302c);color:#fff;font:700 14px Ubuntu;cursor:pointer}
+.sh-b{padding:16px 18px;overflow:auto}
+.sh-a{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;margin-top:14px}
+.lab{display:flex;justify-content:space-between;gap:8px;margin:14px 0 6px;color:var(--red);font:700 15px var(--cond);text-transform:uppercase}
+.lab:first-child{margin-top:0}
+.lab span{font:400 13px Ubuntu;color:#8a6a2a;text-transform:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid2 .hin,.grid2 .hsel,.full{width:100%}
+.cw{display:flex;align-items:center;gap:6px;padding-left:10px;border:2px solid var(--brown);border-radius:8px;background:#fff}
+.cw .hin{border:0;flex:1;min-width:0;font-weight:700;height:36px}
+.cw .hin:focus{box-shadow:none}
+.qc{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.qc button{padding:4px 11px;border:2px solid var(--brown);border-radius:7px;background:#fff;font:700 14px var(--cond);cursor:pointer}
+.qc button.on{background:#ffd21f}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{display:flex;align-items:center;justify-content:center;gap:8px;padding:7px;border:2px solid var(--brown);border-radius:8px;background:#fff;font:700 16px var(--cond);text-transform:uppercase;cursor:pointer}
+.seg button[aria-pressed="true"]{background:#ffd21f}
+.exprint{display:flex;align-items:center;gap:12px;margin-bottom:10px;padding:8px 12px;border:2px solid var(--brown);border-radius:10px;background:#ffe9a3;font-size:13.5px}
+.exprint img{flex:none;width:58px;height:68px;border:2px solid var(--brown);border-radius:6px;object-fit:cover;object-position:top}
+.exprint p{margin:0}
+.drop{display:grid;place-items:center;gap:5px;min-height:150px;padding:14px;border:2px dashed #8a6a2a;border-radius:10px;background:#fff;color:#5a4410;text-align:center;font-size:14px;cursor:pointer}
+.drop.over{border-color:var(--blue);background:#e7f3fa}
+.drop img{max-width:100%;max-height:220px;border:2px solid var(--brown);border-radius:6px;background:#1d1d1d}
+.drop b{color:var(--red);font:700 17px var(--cond);text-transform:uppercase}
+.checks{display:grid;gap:6px;margin-top:12px;font-size:14px}
+.checks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.checks input{width:18px;height:18px;margin:1px 0 0;flex:none;accent-color:var(--green)}
+.msg{min-height:18px;margin-top:8px;color:var(--bad);font-size:13.5px;font-weight:500}
+.note{margin:0 0 10px;color:#4a3a10;font-size:14px}
+.tiny{margin-top:10px;font-size:13px;color:#6b5420}
+.safe{display:flex;gap:10px;margin-top:12px;padding:10px 12px;border:2px solid var(--brown);border-radius:10px;background:#ffe9a3;font-size:13.5px}
+.safe .ic{width:20px;height:20px;color:#a86e00}
+.det{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
+.det .big{width:100%;border:2px solid var(--brown);border-radius:8px;background:#1d1d1d;cursor:zoom-in}
+.det h3{margin:2px 0 4px;color:var(--red);font:700 24px/1.1 var(--cond);text-transform:uppercase;overflow-wrap:anywhere}
+.vl{display:grid;gap:6px;margin:12px 0;font-size:14px}
+.vl div{display:flex;gap:8px;align-items:center}
+.vl .ic{color:var(--green)}.vl .ic.w{color:#c48a00}
+.big-a{display:grid;gap:8px;margin-top:10px}
+.login{display:grid;justify-items:center;gap:8px;text-align:center}
+.login>b{font:700 20px var(--cond);text-transform:uppercase;color:var(--red)}
+.priv h4{margin:14px 0 4px;color:var(--red);font:700 16px var(--cond);text-transform:uppercase}
+.priv ul,.priv ol{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
+.danger{padding:12px;border:2px solid #8e1d15;border-radius:10px;background:#fde5e2;font-size:14px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(100% - 32px);padding:10px 16px;border:2px solid var(--brown);border-radius:10px;background:var(--cream);color:var(--brown);font:700 15px var(--cond);box-shadow:3px 3px 0 #00000040;transform:translate(-50%,160%);opacity:0;transition:.25s;pointer-events:none}
+#toast.on{transform:translate(-50%,0);opacity:1}
+footer{padding:26px 16px 34px;color:#cfe1ee;font-size:13px;text-align:center}
+footer .link{color:#ffe17a}
+
+@media(max-width:1320px){
+  .layout{grid-template-columns:280px minmax(0,1fr)}
+  .right{display:none}
+}
+@media(max-width:1100px){
+  .split{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:900px){
+  .logo{left:16px;width:118px}
+  .ftag{font-size:13px;bottom:-14px;padding:2px 10px 2px 7px}
+  .layout{grid-template-columns:minmax(0,1fr);padding-top:14px}
+  .left{order:2;padding-top:0;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .tabs{justify-content:flex-start;padding:0 4px 0 140px}
+  .banner{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .banner>img{height:100%;object-fit:cover}
+  .det,.mq{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+  .top{height:58px}
+  .top .in{padding:0 34px 0 12px;gap:8px}
+  .wrap{padding:0 10px}
+  .logo{left:10px;width:92px}
+  .tabs{padding-left:104px}
+  .tab{padding:7px 12px 8px;font-size:15px}
+  .tab .spr{display:none}
+  .panel{padding:12px;border-radius:12px}
+  .banner>img:nth-child(n+3){display:none}
+  .h2{font-size:21px}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  .row{grid-template-columns:60px minmax(0,1fr)}
+  .row .th{width:60px;height:46px}
+  .row .acts{grid-column:1/-1;justify-content:flex-start}
+  .vis{grid-template-columns:minmax(0,1fr)}
+  .me{max-width:48px;padding:0}
+  .me span{display:none}
+  .go-btn{padding:0 20px 0 10px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="M12 8v5m0 3v.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="in">
+    <button class="me" type="button" id="meBtn" hidden></button>
+    <button class="go-btn dc" type="button" id="loginBtn"><svg class="ic"><use href="#i-chat"/></svg>Entrar</button>
+    <button class="go-btn" type="button" data-ann>Anunciar</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="logo" href="#feira" aria-label="Feira Origins, início"><img src="img/logo-origins.png" width="162" height="167" alt=""><span class="ftag">FEIRA</span></a>
+
+  <div class="layout">
+    <aside class="left">
+      <div class="bp pic"><img src="img/raros-moedas.png" alt="Raros do Habbo Origins" loading="lazy"><div><h3>Tem raro parado?</h3><p>Coloque na feira: print, nome e preço.</p><button class="hb go" type="button" data-ann>+ Anunciar</button></div></div>
+      <div class="op">
+        <h3>Novo na Feira Origins?</h3>
+        <p style="margin:0 0 10px">No Origins não tem feira livre: aqui tem. Anuncie seus raros e mobis e encontre o que você procura.</p>
+        <b>Como começar:</b>
+        <ol style="margin-top:6px">
+          <li><button class="link" type="button" id="leftLogin">Entre com o Discord</button> (a mesma conta do Habbo Music).</li>
+          <li>Tire um print do item no Origins com o seu boneco do lado dele.</li>
+          <li>Clique em Anunciar, cole o print (Ctrl+V), escreva o nome e o preço em moedas.</li>
+          <li>Quem quiser comprar te chama no Discord.</li>
+          <li>Feche a troca dentro do jogo, pela janela de troca.</li>
+        </ol>
+      </div>
+      <div class="bp">
+        <h3>Segurança</h3>
+        <ul>
+          <li><b>Só em moedas.</b> Nada de dinheiro real, Pix ou reais.</li>
+          <li><b>Confira o item</b> na janela de troca antes de aceitar.</li>
+          <li><b>Nunca passe sua senha</b>, token ou QR code. A Feira nunca pede isso.</li>
+          <li>Prefira itens com o selo <b>conferido</b>.</li>
+        </ul>
+      </div>
+      <div class="bp">
+        <img class="wide" src="img/pier.png" alt="Pessoas no píer do Habbo Origins" loading="lazy">
+        <a class="mini" href="https://gabrielcidro.github.io/cds-remixados/"><span><b>Habbo Music</b>Do mesmo criador: estante e mural de CDs remixados.</span></a>
+      </div>
+    </aside>
+
+    <div class="center">
+      <nav class="tabs" id="tabs" aria-label="Seções"></nav>
+      <main class="panel">
+        <!-- ================= FEIRA ================= -->
+        <section id="v-feira">
+          <div class="banner" aria-hidden="true"><img src="img/quarto-cafe.png" alt=""><img src="img/quarto-sofas.png" alt=""><img src="img/quarto-trono.png" alt=""><img src="img/quarto-estatua.png" alt=""></div>
+          <div class="split">
+            <div>
+              <h1 class="h2">Bem-vindo à Feira Origins!</h1>
+              <div class="blk"><p>A Feira Origins é a feira livre que falta no Habbo Hotel: Origins. Aqui você anuncia seus raros e mobis com um print, o nome e o preço, e quem procura acha. Tudo em moedas do jogo, negociado pelo Discord.</p></div>
+              <div class="blk"><div><div class="h3">Simples assim</div><p>Print, nome e preço. Em um minuto o seu item está na feira, com o selo de conferido assim que a moderação olhar o print.</p></div></div>
+              <div class="blk"><div><div class="h3">Troque dentro do jogo</div><p>Combine pelo Discord e feche a troca no Origins, pela janela de troca, conferindo o item antes de aceitar.</p></div></div>
+              <div class="today" id="newsBox" hidden>
+                <div class="today-t"><span>NOTÍCIAS DO ORIGINS</span><i></i></div>
+                <div class="onews" id="onews"></div>
+                <div class="tiny">Direto do <a class="link" href="https://origins.habbo.com.br/" target="_blank" rel="noopener noreferrer">site oficial do Habbo Origins</a>.</div>
+              </div>
+            </div>
+            <div class="today">
+              <div class="today-t"><span>NOVOS NA FEIRA</span><i></i></div>
+              <div class="news" id="news"></div>
+            </div>
+          </div>
+
+          <img class="strip" src="img/maquina.png" alt="" loading="lazy">
+          <div class="sec"><h2 class="h2">Categorias</h2><button class="link" type="button" id="allBtn" style="color:#fff36b">Ver tudo</button></div>
+          <div class="tiles" id="tiles"></div>
+          <div class="sec"><h2 class="h2" id="secTitle">À venda na feira</h2></div>
+          <div class="tools">
+            <label class="search"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar raro, mobi ou vendedor" aria-label="Buscar"></label>
+            <select class="hsel" id="sort" aria-label="Ordenar">
+              <option value="new">Mais recentes</option><option value="asc">Menor preço</option><option value="desc">Maior preço</option><option value="name">Nome (A-Z)</option>
+            </select>
+          </div>
+          <div class="cards" id="ads"></div>
+        </section>
+
+        <!-- ================= MEUS ANÚNCIOS ================= -->
+        <section id="v-meus" hidden>
+          <div class="sec vh"><h2 class="h2">Meus anúncios</h2><button class="hb go sm" type="button" data-ann>+ Anunciar</button></div>
+          <div class="rows" id="mine"></div>
+        </section>
+
+        <!-- ================= MODERAÇÃO ================= -->
+        <section id="v-mod" hidden>
+          <div class="sec vh"><h2 class="h2">Visitas à feira</h2><small>só admin vê</small></div>
+          <div class="vis" id="modv"></div>
+          <div class="sec"><h2 class="h2">Prints para conferir</h2></div>
+          <div class="rows" id="modq"></div>
+          <div class="sec"><h2 class="h2">Denúncias</h2></div>
+          <div class="rows" id="modr"></div>
+          <div class="sec"><h2 class="h2">Vendedores</h2><small>limite e ban</small></div>
+          <div class="ufind"><input class="hin full" id="mod-q" type="search" placeholder="Nick do Origins ou usuário do Discord" aria-label="Buscar vendedor"><button class="hb" type="button" id="mod-find">Buscar</button></div>
+          <div class="rows" id="modu"></div>
+        </section>
+      </main>
+    </div>
+    <aside class="right" aria-hidden="true"><div class="bp sky"><img src="img/habbowood.png" width="160" height="600" alt="" loading="lazy"></div></aside>
+  </div>
+
+  <footer>
+    Fã-site não oficial: não é operado pela Sulake Oy nem afiliado ao Habbo Hotel®. A Feira não vende nada nem intermedeia trocas.<br>
+    <span class="by"><img src="img/yaruki.png" width="17" height="41" alt="">Feito pelo Yaruki.</span><br><button class="link" type="button" id="privBtn">Privacidade e regras</button>
+  </footer>
+</div>
+
+<dialog id="dlg"><div class="sheet" id="sheet"></div></dialog>
+<div id="toast" role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" integrity="sha384-0w2KAL2YHP6wKOkUDzkCDGgVvfmHnj02DHeQ6XcHOgTfFsGyonKOpShMH1x6nk9o" crossorigin="anonymous"></script>
+<script>
+(function(){
+/* ================= base ================= */
+const SUPA_URL='https://kyrcejahvepkcbgmmlzk.supabase.co',SUPA_KEY='sb_publishable_G7owhDBg0SImXs9uV8wuSg_7pOVbA0g';
+const HOTELS=[['com.br','BR'],['com','US'],['es','ES']];
+const PRICE=[10,25,50,100,250,500,1000];
+const $=id=>document.getElementById(id);
+const mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e};
+const btn=(c,x,fn)=>{const b=mk('button',c,x);b.type='button';b.onclick=fn;return b};
+const icon=(id,c)=>'<svg class="ic'+(c?' '+c:'')+'" aria-hidden="true"><use href="#'+id+'"/></svg>';
+const mki=(t,c,html,txt)=>{const e=mk(t,c);e.innerHTML=html;if(txt!==undefined)e.append(txt);return e};
+const ib=(c,id,txt,fn)=>{const b=btn(c,undefined,fn);b.innerHTML=icon(id);b.append(txt);return b};
+const coin=()=>mk('span','coin');
+const f=n=>Number(n).toLocaleString('pt-BR');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const hotelTag=h=>(HOTELS.find(x=>x[0]===h)||['',''])[1];
+let tt;
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
+const dlg=$('dlg'),sh=$('sheet');
+function openSheet(title,node,wide){
+  sh.innerHTML='';sh.className='sheet'+(wide?' wide':'');
+  const h=mk('div','win-t');h.append(mk('span',null,title));
+  const x=btn('wx','✕',closeSheet);x.setAttribute('aria-label','Fechar');h.append(x);
+  const b=mk('div','sh-b');b.append(node);sh.append(h,b);
+  if(!dlg.open)dlg.showModal();
+  requestAnimationFrame(()=>dlg.classList.add('show'));
+}
+function closeSheet(){dlg.classList.remove('show');setTimeout(()=>{if(!dlg.classList.contains('show')&&dlg.open)dlg.close()},reduce?0:220)}
+dlg.addEventListener('cancel',e=>{e.preventDefault();closeSheet()});
+dlg.addEventListener('click',e=>{if(e.target===dlg)closeSheet()});
+function copyText(t){
+  return (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{
+    const ta=mk('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0';document.body.append(ta);ta.select();
+    let ok=false;try{ok=document.execCommand('copy')}catch(x){}ta.remove();if(!ok)throw 0;
+  });
+}
+const readUrl=x=>new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(x)});
+
+/* ================= Supabase ================= */
+let sb=null;
+try{sb=supabase.createClient(SUPA_URL,SUPA_KEY,{auth:{flowType:'pkce',detectSessionInUrl:true,persistSession:true}})}catch(e){}
+const SEL='id,user_id,tipo,nome,preco,qtd,nota,print_path,status,ok,rejected,created_at,profiles(origins_nick,origins_hotel,discord_id,discord_user,discord_name,avatar_url)';
+let ADS=[],PENDING=[],REPORTS=[],VIS=null,me=null,view=null,pendingView=null,loaded=false,loadErr=null;
+let cat='all',q='',srt='new';
+const ageMin=d=>(Date.now()-new Date(d))/60000;
+const ago=d=>{const m=Math.max(0,Math.round(ageMin(d)));return m<1?'agora':m<60?'há '+m+' min':m<1440?'há '+Math.round(m/60)+' h':'há '+Math.round(m/1440)+(Math.round(m/1440)===1?' dia':' dias')};
+const errMsg=e=>(e&&(e.message||e.error_description))||'Algo deu errado. Tente de novo.';
+const printUrl=p=>p&&sb?sb.storage.from('feira').getPublicUrl(p).data.publicUrl:'';
+function seller(p){p=p||{};return{nick:p.origins_nick||p.discord_name||p.discord_user||'Alguém',hotel:p.origins_hotel||'',discord:p.discord_user||'',discordId:p.discord_id||'',avatar:p.avatar_url||''}}
+function mapAd(r){return{id:r.id,user_id:r.user_id,tipo:r.tipo,nome:r.nome,preco:r.preco,qtd:r.qtd,nota:r.nota||'',print:printUrl(r.print_path),status:r.status,ok:r.ok,rejected:r.rejected,created:r.created_at,seller:seller(r.profiles),mine:!!me&&r.user_id===me.id}}
+function avatar(s){
+  if(!s.avatar)return mki('span','av',icon('i-user'));
+  const i=mk('img');i.alt='';i.loading='lazy';i.referrerPolicy='no-referrer';i.src=s.avatar;i.onerror=()=>i.replaceWith(mki('span','av',icon('i-user')));return i;
+}
+
+async function loadAds(){
+  if(!sb){loaded=true;loadErr='Não consegui conectar ao servidor. Verifique sua internet e recarregue a página.';renderAll();return}
+  const [r,m]=await Promise.all([
+    sb.from('feira_anuncios').select(SEL).eq('status','ativo').order('created_at',{ascending:false}).limit(400),
+    me?sb.from('feira_anuncios').select(SEL).eq('user_id',me.id).neq('status','ativo').neq('status','removido').order('created_at',{ascending:false}):Promise.resolve({data:[]})
+  ]);
+  loaded=true;
+  const error=r.error||m.error;
+  if(error)loadErr=errMsg(error);else{loadErr=null;ADS=r.data.concat(m.data||[]).map(mapAd)}
+  renderAll();
+}
+async function loadMod(){
+  if(!me||!me.admin){PENDING=[];REPORTS=[];return}
+  const [p,r,v]=await Promise.all([
+    sb.from('feira_anuncios').select(SEL).eq('ok',false).is('rejected',null).neq('status','removido').order('created_at'),
+    sb.from('feira_denuncias').select('id,motivo,created_at,profiles(origins_nick,discord_user),feira_anuncios('+SEL+')').order('created_at'),
+    sb.rpc('feira_ver_visitas')
+  ]);
+  VIS=v.error?null:(v.data||[]);
+  if(p.error||r.error)toast('Moderação: '+errMsg(p.error||r.error));
+  PENDING=(p.data||[]).map(mapAd);
+  REPORTS=(r.data||[]).filter(x=>x.feira_anuncios).map(x=>({id:x.id,why:x.motivo,by:x.profiles?(x.profiles.origins_nick||'@'+x.profiles.discord_user):'?',ad:mapAd(x.feira_anuncios)}));
+  renderAll();
+}
+async function loadMe(uid){
+  let p=null;
+  // admin, ban e limites não são públicos: vêm de meu_perfil(); o select direto é só para antes do supabase-perfis.sql
+  for(let i=0;i<3&&!p;i++){let r=await sb.rpc('meu_perfil');if(r.error)r=await sb.from('profiles').select('*').eq('id',uid).maybeSingle();p=r.data&&r.data.id?r.data:null;if(!p)await new Promise(r=>setTimeout(r,700))}
+  p=p||{};
+  me={id:uid,discord:p.discord_user||'discord',discordName:p.discord_name||p.discord_user,discordId:p.discord_id,avatar:p.avatar_url,nick:p.origins_nick||'',hotel:p.origins_hotel||'com.br',admin:!!p.is_admin,banned:!!p.banned,limit:p.feira_limit==null?10:p.feira_limit};
+  if(me.admin){try{localStorage.setItem('fo-nao-contar','1')}catch(e){}}
+  authUI();
+}
+
+/* ---------- login com Discord ---------- */
+function loginSheet(intent){
+  const n=mk('div','login'),li=mk('img','shimg');li.src='img/lanterna.png';li.alt='';n.append(li);
+  n.append(mk('b',null,'Entrar com Discord'),mk('p','note','Você vai para o site oficial do Discord, autoriza e volta logado. O site recebe só seu nome de usuário, seu ID e seu avatar, nunca sua senha. É a mesma conta do Habbo Music.'));
+  const sf=mki('div','safe',icon('i-shield')),sx=mk('div');sf.style.textAlign='left';
+  sx.append(mk('b',null,'A Feira Origins nunca pede sua senha, seu token nem para escanear QR code.'),' Se alguém pedir isso dizendo ser do site, é golpe.');
+  sf.append(sx);n.append(sf);
+  const ac=mk('div','sh-a');ac.style.width='100%';
+  const go_=ib('hb dc','i-chat','Continuar com Discord',async()=>{
+    if(!sb){toast('Sem conexão com o servidor');return}
+    try{sessionStorage.setItem('fo-intent',JSON.stringify(intent||null))}catch(e){}
+    go_.disabled=true;
+    const {error}=await sb.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.origin+location.pathname}});
+    if(error){go_.disabled=false;toast(errMsg(error))}
+  });
+  ac.append(btn('hb','Cancelar',closeSheet),go_);
+  n.append(ac);openSheet('Entrar',n);
+}
+function runIntent(){
+  let it=null;try{it=JSON.parse(sessionStorage.getItem('fo-intent'));sessionStorage.removeItem('fo-intent')}catch(e){}
+  if(!it)return;
+  if(it.t==='ann')annStart();
+  if(it.t==='go')go(it.v);
+}
+async function onSession(session){
+  if(!session){me=null;authUI();if(view==='meus'||view==='mod')go('feira');await loadAds();return}
+  await loadMe(session.user.id);
+  await loadAds();
+  if(me.admin)loadMod();
+  if(pendingView){const v=pendingView;pendingView=null;if(v!=='mod'||me.admin)go(v)}
+  runIntent();
+}
+function authUI(){
+  const on=!!me;
+  $('loginBtn').hidden=on;$('meBtn').hidden=!on;
+  if(on){const b=$('meBtn');b.innerHTML='';b.append(avatar({avatar:me.avatar}),mk('span',null,me.nick||'@'+me.discord))}
+  renderTabs();
+}
+$('loginBtn').onclick=()=>loginSheet(null);
+$('meBtn').onclick=()=>{
+  const n=mk('div');
+  n.append(mk('p','note','Discord: @'+me.discord+(me.nick?' · Origins: '+me.nick+' ('+hotelTag(me.hotel)+')':' · nick do Origins ainda não colocado')));
+  if(me.admin)n.append(mk('p','note','Você é admin.'));
+  const tn=mk('div','tiny');tn.append(btn('link','Mudar meu nick do Origins',()=>nickSheet(()=>toast('Nick salvo'))),' · ',btn('link','Privacidade e regras',privSheet),' · ',btn('link','Apagar minha conta',deleteSheet));n.append(tn);
+  const ac=mk('div','sh-a');
+  ac.append(btn('hb','Fechar',closeSheet),btn('hb red','Sair',async()=>{closeSheet();await sb.auth.signOut();toast('Você saiu')}));
+  n.append(ac);openSheet('Minha conta',n);
+};
+function nickFields(){
+  const nk=mk('input','hin');nk.placeholder='Seu nick no Origins';nk.maxLength=32;nk.value=me.nick||'';nk.setAttribute('aria-label','Nick no Habbo Origins');
+  const ht=mk('select','hsel');HOTELS.forEach(([h,t])=>ht.append(new Option('Origins '+t,h)));ht.value=me.hotel||'com.br';ht.setAttribute('aria-label','Hotel do Origins');
+  const g=mk('div','grid2');g.append(nk,ht);
+  return{g,async save(){
+    const v=nk.value.trim();if(!v)throw new Error('Coloque seu nick do Origins.');
+    const {error}=await sb.rpc('feira_meu_nick',{p_nick:v,p_hotel:ht.value});if(error)throw new Error(errMsg(error));
+    me.nick=v;me.hotel=ht.value;authUI();
+  }};
+}
+function nickSheet(done){
+  const n=mk('div'),F=nickFields(),msg=mk('div','msg');
+  n.append(mk('p','note','É o nick que aparece nos seus anúncios, para quem quiser comprar te achar no jogo. No print, apareça com o seu boneco do lado do item.'),F.g,msg);
+  const ac=mk('div','sh-a'),sv=btn('hb go','Salvar',async()=>{sv.disabled=true;try{await F.save();closeSheet();await loadAds();done&&done()}catch(e){msg.textContent=e.message}sv.disabled=false});
+  ac.append(btn('hb','Cancelar',closeSheet),sv);n.append(ac);openSheet('Seu nick no Origins',n);
+}
+
+/* ---------- privacidade e apagar conta ---------- */
+function privSheet(){
+  const n=mk('div','priv'),sec=(t,items)=>{n.append(mk('h4',null,t));const u=mk('ul');items.forEach(x=>u.append(mk('li',null,x)));n.append(u)};
+  sec('Quando você entra com o Discord, guardamos',['Do Discord: seu ID, nome de usuário, nome de exibição e avatar. O Discord também manda seu e-mail para o sistema de login; o site não mostra nem usa esse e-mail.','Seu nick e hotel do Origins, que você mesmo coloca.','Seus anúncios, os prints que você envia e as denúncias que você faz.','A conta é a mesma do Habbo Music (mesmo login).']);
+  sec('O que fica público',['Os anúncios: nome do item, preço, print, seu nick do Origins e seu nome e avatar do Discord, para as pessoas negociarem com você.']);
+  sec('Contagem de visitas',['A feira conta quantas vezes foi aberta por dia e de quantos aparelhos, só como número. Não guarda IP, nome nem cookie de rastreamento.']);
+  sec('Regras da feira',['Só em moedas do jogo. Nada de venda por dinheiro real, Pix ou reais.','Só anuncie itens que você tem, com print verdadeiro mostrando o item e seu nick.','Golpe, print falso ou anúncio repetido podem ser removidos, e a conta pode ser banida (o ban vale também no Habbo Music).','A Feira não vende nada nem intermedeia trocas: tudo é combinado entre as pessoas, por conta e risco delas. Feche sempre pela janela de troca do jogo.']);
+  sec('Apagar seus dados',['A qualquer momento, em Minha conta → Apagar minha conta. Como a conta é a mesma, isso apaga seus dados da Feira e do Habbo Music.','Você também pode tirar o acesso no Discord: Configurações → Aplicativos autorizados.']);
+  n.append(mk('p','tiny','Fã-site não oficial: não é operado pela Sulake Oy nem afiliado ao Habbo Hotel®.'));
+  const ac=mk('div','sh-a');ac.append(btn('hb','Fechar',closeSheet));n.append(ac);
+  openSheet('Privacidade e regras',n);
+}
+function deleteSheet(){
+  if(!me){loginSheet(null);return}
+  const n=mk('div'),msg=mk('div','msg'),box=mk('div','danger');
+  box.append(mk('p',null,'Isso apaga para sempre sua conta, seus anúncios, seus prints e suas denúncias, aqui na Feira e também no Habbo Music (é a mesma conta). Não dá para desfazer.'));
+  const del=btn('hb red','Apagar minha conta',async()=>{
+    if(!del.dataset.a){del.dataset.a=1;del.textContent='Tem certeza? Clique de novo';return}
+    del.disabled=true;del.innerHTML='<span class="spin"></span>Apagando...';
+    for(const b of ['feira','prints']){const ls=await sb.storage.from(b).list(me.id,{limit:1000});if(ls.data&&ls.data.length)await sb.storage.from(b).remove(ls.data.map(x=>me.id+'/'+x.name))}
+    const {error}=await sb.rpc('apagar_minha_conta');
+    if(error){del.disabled=false;del.textContent='Apagar minha conta';delete del.dataset.a;msg.textContent=errMsg(error);return}
+    closeSheet();await sb.auth.signOut().catch(()=>{});toast('Sua conta foi apagada.');
+  });
+  box.append(del);
+  const ac=mk('div','sh-a');ac.append(btn('hb','Cancelar',closeSheet));
+  n.append(box,msg,ac);openSheet('Apagar minha conta',n);
+}
+$('privBtn').onclick=privSheet;
+$('leftLogin').onclick=()=>me?toast('Você já entrou com o Discord'):loginSheet(null);
+function howSheet(){
+  const n=mk('div','priv'),ol=mk('ol'),hi=mk('img','shimg');hi.src='img/yellow-maze.png';hi.alt='';n.append(hi);
+  ['Entre com o Discord (a mesma conta do Habbo Music).','Tire um print do raro ou mobi no Origins com o seu boneco do lado dele, no quarto.','Clique em Anunciar, cole o print (Ctrl+V), escreva o nome e o preço em moedas. Pronto: já está na feira.','Quem quiser comprar clica em Negociar e fala com você no Discord. A moderação confere o print e dá o selo de print conferido.','Feche a troca dentro do jogo, pela janela de troca, conferindo o item antes de aceitar.'].forEach(x=>ol.append(mk('li',null,x)));
+  n.append(ol);const ac=mk('div','sh-a');ac.append(btn('hb','Fechar',closeSheet),btn('hb go','+ Anunciar meu raro',()=>{closeSheet();annStart()}));n.append(ac);
+  openSheet('Como funciona',n);
+}
+
+/* ================= feira ================= */
+const CATS=[
+  ['all','Tudo','stall',a=>true],
+  ['raro','Raros','throne',a=>a.tipo==='raro'],
+  ['mobi','Mobis','sofa',a=>a.tipo==='mobi'],
+  ['ok','Conferidos','trophy',a=>a.ok],
+  ['new','Novidades','gift',a=>ageMin(a.created)<1440],
+  ['p1','Até 100','c1',a=>a.preco<=100],
+  ['p2','101 a 1.000','c2',a=>a.preco>100&&a.preco<=1000],
+  ['p3','1.000+','c3',a=>a.preco>1000]
+];
+function visible(){
+  const c=CATS.find(x=>x[0]===cat);
+  const a=ADS.filter(x=>x.status==='ativo'&&c[3](x)&&(!q||(x.nome+' '+x.seller.nick+' '+x.seller.discord).toLowerCase().includes(q)));
+  const s={new:(x,y)=>new Date(y.created)-new Date(x.created),asc:(x,y)=>x.preco-y.preco,desc:(x,y)=>y.preco-x.preco,name:(x,y)=>x.nome.localeCompare(y.nome,'pt-BR')}[srt];
+  return a.sort(s);
+}
+function card(a){
+  const c=mk('article','card'+(a.status==='vendido'?' sold':''));c.tabIndex=0;
+  c.setAttribute('aria-label',a.nome+', '+a.preco+' moedas');
+  const s=mk('div','shot');
+  if(a.print){const im=mk('img');im.src=a.print;im.alt='';im.loading='lazy';s.append(im)}
+  s.append(a.status==='vendido'?mk('span','pill sold','Vendido'):mk('span','pill '+(a.ok?'ok':'wait'),a.ok?'Conferido':'Em análise'));
+  s.append(mk('span','kind '+a.tipo,a.tipo==='raro'?'Raro':'Mobi'));
+  const b=mk('div','c-b'),p=mk('span','price');p.append(coin(),f(a.preco)+' moedas');if(a.qtd>1)p.append(mk('small',null,'x'+a.qtd));
+  const w=mk('div','who');w.append(avatar(a.seller),mk('span',null,a.seller.nick+(a.seller.hotel?' · Origins '+hotelTag(a.seller.hotel):'')+' · '+ago(a.created)));
+  b.append(mk('h3',null,a.nome),p,w);c.append(s,b);
+  c.onclick=()=>detail(a);c.onkeydown=e=>{if(e.key==='Enter')detail(a)};
+  return c;
+}
+function emptyBox(text,...extra){const m=mk('div','empty');m.append(mk('p',null,text),...extra);return m}
+function setCat(k){cat=k;renderTiles();renderAds();renderTabs()}
+function renderTiles(){
+  const box=$('tiles');box.innerHTML='';
+  CATS.forEach(([k,l,art,fn])=>{const b=btn('tile',undefined,()=>setCat(k));b.append(l);b.setAttribute('aria-pressed',cat===k);box.append(b)});
+  $('secTitle').textContent=cat==='all'?'À venda na feira':CATS.find(x=>x[0]===cat)[1];
+}
+function renderAds(){
+  const box=$('ads');box.innerHTML='';
+  if(!loaded){box.append(emptyBox('Carregando a feira...'));return}
+  if(loadErr){box.append(emptyBox(loadErr,btn('hb','Tentar de novo',loadAds)));return}
+  const a=visible();
+  if(!ADS.some(x=>x.status==='ativo')){const im=mk('img','emptyimg');im.src='img/cogumelo.png';im.alt='';const e=emptyBox('A feira ainda está vazia. Seja o primeiro a anunciar um raro!',btn('hb go','+ Anunciar meu raro',()=>annStart()));e.prepend(im);box.append(e);return}
+  if(!a.length){box.append(emptyBox('Nada encontrado com esses filtros.'));return}
+  a.forEach(x=>box.append(card(x)));
+}
+// caixinha "Novos na feira", no clima do Habbo Today
+const dia=d=>new Date(d).toLocaleDateString('pt-BR',{day:'numeric',month:'short',year:'numeric'}).replace('.','');
+function renderNews(){
+  const box=$('news'),l=ADS.filter(a=>a.status==='ativo').slice(0,6);box.innerHTML='';
+  if(!loaded){box.append(mk('div',null,'Carregando...'));return}
+  if(!l.length){const d=mk('div',null,'Ainda não tem nenhum anúncio na feira. ');d.append(btn('link','Seja o primeiro!',()=>annStart()));box.append(d);return}
+  l.forEach(a=>{const d=mk('div');d.append(mk('b',null,dia(a.created)+' - '),btn(null,a.nome,()=>detail(a)),mk('small',null,f(a.preco)+' moedas'+(a.qtd>1?' cada':'')+' · '+(a.tipo==='raro'?'raro':'mobi')+' · vendido por '+a.seller.nick+(a.ok?' · conferido':'')));box.append(d)});
+}
+function negotiate(a){
+  if(!a.seller.discordId){toast('Não encontrei o Discord desse vendedor.');return}
+  window.open('https://discord.com/users/'+encodeURIComponent(a.seller.discordId),'_blank','noopener');
+  copyText(a.seller.discord).then(()=>toast('Abrindo o perfil de @'+a.seller.discord+' no Discord (nome copiado)')).catch(()=>toast('Abrindo o perfil de @'+a.seller.discord+' no Discord'));
+}
+function zoom(src){const i=mk('img');i.src=src;i.alt='Print';i.style.cssText='display:block;width:100%;border-radius:6px;background:#2b2b2b';openSheet('Print',i,true)}
+function detail(a){
+  const n=mk('div','det'),l=mk('div'),r=mk('div');
+  if(a.print){const im=mk('img','big');im.src=a.print;im.alt='Print de '+a.nome;im.onclick=()=>zoom(a.print);l.append(im,mk('div','tiny','Print enviado pelo vendedor. Clique para ampliar.'))}
+  const p=mk('span','price');p.append(coin(),f(a.preco)+' moedas'+(a.qtd>1?' cada · '+a.qtd+' unidades':''));
+  r.append(mk('div','lab',a.tipo==='raro'?'Raro':'Mobi'),mk('h3',null,a.nome),p);
+  if(a.nota)r.append(mk('p','note',a.nota));
+  const v=mk('div','vl');
+  v.append(mki('div',null,icon('i-user'),'Vendedor: '+a.seller.nick+(a.seller.hotel?' (Origins '+hotelTag(a.seller.hotel)+')':'')));
+  if(a.seller.discord)v.append(mki('div',null,icon('i-chat'),'Discord: @'+a.seller.discord));
+  v.append(mki('div',null,a.ok?icon('i-check'):icon('i-wait','w'),a.ok?'Print conferido por um moderador':'Print ainda em análise pela moderação'));
+  v.append(mki('div',null,icon('i-wait','w'),'Anunciado '+ago(a.created)));
+  r.append(v);
+  const ba=mk('div','big-a'),ng=ib('hb dc','i-chat','Negociar no Discord',()=>negotiate(a));
+  if(a.status==='vendido'){ng.disabled=true;ng.lastChild.textContent='Já foi vendido'}
+  else if(a.mine){ng.disabled=true;ng.lastChild.textContent='Este anúncio é seu'}
+  ba.append(ng);
+  if(a.seller.hotel&&a.seller.nick)ba.append(ib('hb','i-copy','Copiar nick do Origins',()=>copyText(a.seller.nick).then(()=>toast('Nick '+a.seller.nick+' copiado')).catch(()=>toast('Não deu para copiar'))));
+  r.append(ba);
+  const sf=mki('div','safe',icon('i-shield')),sx=mk('div');
+  sx.append(mk('b',null,'Feche a troca dentro do jogo, pela janela de troca, conferindo o item antes de aceitar.'),' Nunca pague com dinheiro real e nunca passe sua senha, token ou QR code.');
+  sf.append(sx);r.append(sf);
+  if(!a.mine){const tn=mk('div','tiny','Algo estranho? ');tn.append(btn('link','Denunciar anúncio',()=>reportAd(a)));r.append(tn)}
+  n.append(l,r);openSheet('Anúncio',n,true);
+}
+function reportAd(a){
+  if(!me){loginSheet(null);return}
+  const n=mk('div'),ta=mk('textarea','hin full'),msg=mk('div','msg');ta.rows=3;ta.maxLength=300;ta.placeholder='Conte o que tem de errado (ex.: print falso, preço em reais, golpe)';ta.setAttribute('aria-label','Motivo da denúncia');
+  const ac=mk('div','sh-a'),sb_=btn('hb red','Enviar denúncia',async()=>{
+    const m=ta.value.trim();if(!m){msg.textContent='Conte o motivo da denúncia.';return}
+    sb_.disabled=true;const {error}=await sb.from('feira_denuncias').insert({anuncio_id:a.id,motivo:m});sb_.disabled=false;
+    if(error){msg.textContent=errMsg(error);return}
+    closeSheet();toast('Denúncia enviada para a moderação. Obrigado!');if(me.admin)loadMod();
+  });
+  ac.append(btn('hb','Cancelar',closeSheet),sb_);
+  n.append(mk('p','note','Denúncia de "'+a.nome+'" de '+a.seller.nick+'.'),ta,msg,ac);openSheet('Denunciar',n);
+}
+
+/* ---------- anunciar: print, nome e preço ---------- */
+let pasteFn=null;
+document.addEventListener('paste',e=>{
+  if(!pasteFn||!dlg.open||!e.clipboardData)return;
+  const l=[...e.clipboardData.items].filter(i=>i.kind==='file'&&/^image\//.test(i.type)).map(i=>i.getAsFile()).filter(Boolean);
+  if(!l.length)return;e.preventDefault();pasteFn(l);
+});
+function annStart(){
+  if(!me){loginSheet({t:'ann'});return}
+  if(me.banned){toast('Sua conta não pode anunciar.');return}
+  const ativos=ADS.filter(a=>a.mine&&a.status==='ativo').length;
+  if(ativos>=me.limit){
+    const n=mk('div','login');
+    n.append(mk('b',null,'Você chegou ao seu limite de anúncios'),mk('p','note','Você tem '+ativos+' de '+me.limit+' anúncios ativos. Marque algum como vendido ou apague em Meus anúncios para liberar uma vaga. Quer anunciar mais? Fale com a moderação.'));
+    const ac=mk('div','sh-a');ac.style.width='100%';ac.append(btn('hb','Fechar',closeSheet),btn('hb go','Ver meus anúncios',()=>{closeSheet();go('meus')}));
+    n.append(ac);openSheet('Limite de anúncios',n);return;
+  }
+  annSheet({tipo:'raro',qtd:1});
+}
+function annSheet(d){
+  const n=mk('div'),msg=mk('div','msg');
+  let F=null;
+  if(!me.nick){F=nickFields();n.append(mk('div','lab','Seu nick no Origins'),mk('p','note','Fica salvo na sua conta e aparece nos anúncios, para quem quiser comprar te achar no jogo.'),F.g)}
+  const fi=mk('input');fi.type='file';fi.accept='image/png,image/jpeg,image/webp';fi.hidden=true;
+  const dr=mk('label','drop');dr.append(fi);
+  const show=()=>{[...dr.childNodes].forEach(x=>{if(x!==fi)x.remove()});if(d.preview){const i=mk('img');i.src=d.preview;i.alt='Prévia do print';dr.append(i,mk('span',null,'Cole outro print para trocar'))}else{dr.append(mk('b',null,'Cole o print aqui (Ctrl+V)'),mk('span',null,'Ou clique para escolher o arquivo. PNG, JPG ou WebP, até 5 MB.'))}};
+  const take=async l=>{const x=l[0];if(!x)return;
+    if(!/^image\/(png|jpeg|webp)$/.test(x.type)){msg.textContent='Envie uma imagem PNG, JPG ou WebP.';return}
+    if(x.size>5*1024*1024){msg.textContent='Imagem muito grande (máximo 5 MB).';return}
+    d.file=x;d.preview=await readUrl(x);msg.textContent='';show();nm.focus()};
+  fi.onchange=()=>take([...fi.files]);pasteFn=take;
+  dlg.addEventListener('close',()=>{if(pasteFn===take)pasteFn=null},{once:true});
+  dr.ondragover=e=>{e.preventDefault();dr.classList.add('over')};dr.ondragleave=()=>dr.classList.remove('over');
+  dr.ondrop=e=>{e.preventDefault();dr.classList.remove('over');take([...e.dataTransfer.files])};
+  show();
+  const seg=mk('div','seg');[['raro','throne','Raro'],['mobi','sofa','Mobi']].forEach(([k,art,t])=>{const b=btn(null,undefined,()=>{d.tipo=k;seg.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b))});b.append(t);b.setAttribute('aria-pressed',d.tipo===k);seg.append(b)});
+  const nm=mk('input','hin full');nm.placeholder='Ex.: Trono, Abajur Dragão, Máquina de Sorvete';nm.maxLength=60;nm.value=d.nome||'';nm.setAttribute('aria-label','Nome do item');
+  const pr=mk('input','hin');pr.type='number';pr.min=1;pr.inputMode='numeric';pr.placeholder='0';pr.value=d.preco||'';pr.setAttribute('aria-label','Preço em moedas');
+  const cw=mk('div','cw');cw.append(coin(),pr);
+  const qt=mk('input','hin');qt.type='number';qt.min=1;qt.max=999;qt.value=d.qtd||1;qt.setAttribute('aria-label','Quantidade');
+  const qc=mk('div','qc');PRICE.forEach(v=>{const b=btn(null,f(v),()=>{pr.value=v;qc.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b))});qc.append(b)});
+  const nt=mk('textarea','hin full');nt.rows=2;nt.maxLength=140;nt.placeholder='Opcional: aceito troca, horário em que fico on, etc.';nt.value=d.nota||'';nt.setAttribute('aria-label','Observação');
+  const g=mk('div','grid2'),a1=mk('div'),a2=mk('div');
+  const pl=mk('div','lab','Preço');pl.append(mk('span',null,'só em moedas'));a1.append(pl,cw);a2.append(mk('div','lab','Quantidade'),qt);g.append(a1,a2);
+  const ol=mk('div','lab','Observação');ol.append(mk('span',null,'opcional'));
+  const ex=mk('div','exprint'),exi=mk('img');exi.src='img/exemplo-print.png';exi.alt='Exemplo: boneco do lado do raro no quarto';exi.width=58;exi.height=68;
+  ex.append(exi,mki('p',null,'<b>Dica:</b> tire o print com o <b>seu boneco do lado do item</b>, como no exemplo. Assim todo mundo vê que o raro está com você.'));
+  n.append(mk('div','lab','Print do item'),ex,dr,mk('div','lab','Tipo'),seg,mk('div','lab','Nome do item'),nm,g,qc,ol,nt,msg);
+  const ac=mk('div','sh-a'),pb=btn('hb go','Publicar na feira',async()=>{
+    const v={nome:nm.value.trim(),preco:parseInt(pr.value,10),qtd:Math.min(999,Math.max(1,parseInt(qt.value,10)||1)),nota:nt.value.trim()};
+    Object.assign(d,v);
+    if(!d.file){msg.textContent='Cole ou envie o print do item.';return}
+    if(!v.nome){msg.textContent='Coloque o nome do item.';nm.focus();return}
+    if(!(v.preco>0)){msg.textContent='Coloque o preço em moedas.';pr.focus();return}
+    if(/r\$|reais|pix/i.test(v.nota+' '+v.nome)){msg.textContent='Anúncios são só em moedas do jogo: tire menções a reais ou Pix.';return}
+    pb.disabled=true;pb.innerHTML='<span class="spin"></span>Publicando...';msg.textContent='';
+    const fail=m=>{pb.disabled=false;pb.textContent='Publicar na feira';msg.textContent=m};
+    if(F){try{await F.save()}catch(e){return fail(e.message)}}
+    const ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[d.file.type];
+    const path=me.id+'/'+Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.'+ext;
+    const up=await sb.storage.from('feira').upload(path,d.file,{contentType:d.file.type,upsert:false});
+    if(up.error)return fail('Não consegui enviar o print: '+errMsg(up.error));
+    const {error}=await sb.from('feira_anuncios').insert({tipo:d.tipo,nome:v.nome,preco:v.preco,qtd:v.qtd,nota:v.nota||null,print_path:path});
+    if(error){await sb.storage.from('feira').remove([path]);return fail(errMsg(error))}
+    closeSheet();await loadAds();if(me.admin)loadMod();go('meus');toast('Anúncio publicado! O print foi para a moderação.');
+  });
+  ac.append(btn('hb','Cancelar',closeSheet),pb);n.append(ac);
+  openSheet('Anunciar na feira',n);
+}
+
+/* ---------- meus anúncios ---------- */
+async function update(a,patch,okMsg){
+  const {error}=await sb.from('feira_anuncios').update(patch).eq('id',a.id);
+  if(error){toast(errMsg(error));return}
+  toast(okMsg);await loadAds();if(me.admin)loadMod();
+}
+function thumb(a){const i=mk('img','th');i.alt='';if(a.print){i.src=a.print;i.onclick=()=>zoom(a.print)}return i}
+function renderMine(){
+  const box=$('mine');box.innerHTML='';if(!me)return;
+  const l=ADS.filter(a=>a.mine),at=l.filter(a=>a.status==='ativo').length;
+  box.append(mk('div','lim'+(at>=me.limit?' full':''),at+' de '+me.limit+' anúncios ativos'+(at>=me.limit?' · limite atingido: marque um como vendido ou apague para liberar vaga':'')));
+  if(!l.length){box.append(emptyBox('Você ainda não anunciou nada.',btn('hb go','+ Anunciar meu primeiro raro',()=>annStart())));return}
+  l.forEach(a=>{
+    const r=mk('div','row'),t=mk('div');
+    t.append(mk('b',null,a.nome),mk('small',null,(a.tipo==='raro'?'Raro':'Mobi')+' · '+f(a.preco)+' moedas'+(a.qtd>1?' · x'+a.qtd:'')+' · '+ago(a.created)));
+    const st=a.status==='vendido'?['sold','VENDIDO']:a.rejected?['bad','PRINT RECUSADO']:a.ok?['ok','NA FEIRA · CONFERIDO']:['wait','NA FEIRA · EM ANÁLISE'];
+    t.append(mk('br'),mk('span','st '+st[0],st[1]));
+    if(a.rejected)t.append(mk('small',null,' Motivo: '+a.rejected));
+    const acts=mk('div','acts');
+    acts.append(btn('hb sm','Ver',()=>detail(a)));
+    if(a.status==='ativo')acts.append(btn('hb sm','Mudar preço',()=>{const v=parseInt(prompt('Novo preço em moedas para "'+a.nome+'":',a.preco),10);if(v>0)update(a,{preco:v},'Preço atualizado')}));
+    acts.append(btn('hb sm '+(a.status==='vendido'?'blue':'go'),a.status==='vendido'?'Reativar':'Marcar vendido',()=>a.status==='vendido'?update(a,{status:'ativo'},'Anúncio de volta na feira'):update(a,{status:'vendido'},'Vendido! O anúncio saiu da feira.')));
+    const del=btn('hb sm red','Apagar',()=>{if(del.dataset.a){update(a,{status:'removido'},'Anúncio apagado');return}del.dataset.a=1;del.textContent='Confirmar?';setTimeout(()=>{delete del.dataset.a;del.textContent='Apagar'},2500)});
+    acts.append(del);r.append(thumb(a),t,acts);box.append(r);
+  });
+}
+
+/* ---------- moderação ---------- */
+async function modCall(fn,args,okMsg){
+  const {error}=await sb.rpc(fn,args);
+  if(error){toast(errMsg(error));return}
+  toast(okMsg);await loadAds();await loadMod();
+}
+function renderVisits(){
+  const box=$('modv');box.innerHTML='';
+  if(!VIS){box.append(mk('div','vnote','Ainda sem números. Se acabou de rodar o supabase-feira.sql, recarregue a página.'));return}
+  const day=n=>{const d=new Date();d.setDate(d.getDate()-n+1);return d.toLocaleDateString('sv-SE',{timeZone:'America/Sao_Paulo'})};
+  const soma=(desde,k)=>VIS.filter(x=>x.dia>=desde).reduce((t,x)=>t+x[k],0);
+  [['Hoje',day(1)],['Últimos 7 dias',day(7)],['Últimos 30 dias',day(30)]].forEach(([t,desde])=>{const b=mk('div','vbox');b.append(mk('span',null,t),mk('b',null,soma(desde,'pessoas')+' pessoas'),mk('small',null,soma(desde,'aberturas')+' vezes que a feira foi aberta'));box.append(b)});
+  const bars=mk('div','vbars'),ult=[];for(let i=13;i>=0;i--)ult.push(day(i+1));
+  const max=Math.max(1,...ult.map(d=>(VIS.find(x=>x.dia===d)||{pessoas:0}).pessoas));
+  ult.forEach(d=>{const n=(VIS.find(x=>x.dia===d)||{pessoas:0}).pessoas,i=mk('i');i.style.height=Math.max(2,n/max*76)+'px';i.title=d.split('-').reverse().slice(0,2).join('/')+': '+n+' pessoas';bars.append(i)});
+  box.append(bars,mk('div','vnote','Barras: pessoas por dia nos últimos 14 dias. Suas visitas como admin não entram.'));
+}
+function renderMod(){
+  if(!me||!me.admin)return;
+  renderVisits();
+  const box=$('modq');box.innerHTML='';
+  if(!PENDING.length)box.append(mk('div','empty','Nenhum print esperando.'));
+  PENDING.forEach(a=>{
+    const m=mk('div','mq'),t=mk('div');
+    if(a.print){const im=mk('img');im.src=a.print;im.alt='Print';im.onclick=()=>zoom(a.print);m.append(im)}else m.append(mk('div','empty','Sem print'));
+    t.append(mk('b',null,a.nome+' · '+(a.tipo==='raro'?'Raro':'Mobi')+' · '+f(a.preco)+' moedas'),mk('div','tiny',a.seller.nick+(a.seller.hotel?' (Origins '+hotelTag(a.seller.hotel)+')':'')+' · @'+a.seller.discord+' · '+ago(a.created)));
+    const ul=mk('ul');['O item "'+a.nome+'" aparece no print?','Tem um boneco do lado do item (de preferência o de '+a.seller.nick+')?','O print não parece editado ou repetido?'].forEach(x=>ul.append(mk('li',null,x)));t.append(ul);
+    const ac=mk('div','acts');ac.style.justifyContent='flex-start';
+    ac.append(btn('hb sm go','Aprovar print',()=>modCall('feira_mod_print',{p_id:a.id,p_ok:true,p_motivo:null},'Print aprovado')));
+    ac.append(btn('hb sm red','Recusar',()=>{const why=prompt('Motivo da recusa (o vendedor vê):','O item ou o nick não aparecem no print');if(why!==null)modCall('feira_mod_print',{p_id:a.id,p_ok:false,p_motivo:why.slice(0,200)||'Print recusado'},'Print recusado')}));
+    t.append(ac);m.append(t);box.append(m);
+  });
+  const rb=$('modr');rb.innerHTML='';
+  if(!REPORTS.length)rb.append(mk('div','empty','Nenhuma denúncia.'));
+  REPORTS.forEach(r=>{
+    const a=r.ad,row=mk('div','row'),t=mk('div');
+    t.append(mk('b',null,'"'+a.nome+'" de '+a.seller.nick),mk('small',null,'Denunciado por '+r.by+': '+r.why));
+    const ac=mk('div','acts');
+    ac.append(btn('hb sm','Ver',()=>detail(a)),btn('hb sm','Ignorar',()=>modCall('feira_mod_ignorar',{p_id:r.id},'Denúncia ignorada')),btn('hb sm red','Remover anúncio',()=>modCall('feira_mod_remover',{p_id:a.id},'Anúncio removido')));
+    const ban=btn('hb sm red','Banir vendedor',()=>{if(ban.dataset.a){modCall('feira_mod_banir',{p_user:a.user_id,p_ban:true},'Vendedor banido e anúncios removidos');return}ban.dataset.a=1;ban.textContent='Confirmar ban?';setTimeout(()=>{delete ban.dataset.a;ban.textContent='Banir vendedor'},3000)});
+    ac.append(ban);row.append(thumb(a),t,ac);rb.append(row);
+  });
+}
+async function findUsers(){
+  const box=$('modu'),t=$('mod-q').value.trim().replace(/[^\p{L}\p{N}._\-=?!@:]/gu,'');
+  box.innerHTML='';
+  if(t.length<2){box.append(mk('div','empty','Digite pelo menos 2 letras do nick ou do usuário do Discord.'));return}
+  let r=await sb.rpc('mod_buscar',{p_q:t});
+  if(r.error&&r.error.code==='PGRST202')r=await sb.from('profiles').select('id,discord_user,discord_name,origins_nick,origins_hotel,feira_limit,banned,is_admin').or('discord_user.ilike.*'+t+'*,origins_nick.ilike.*'+t+'*,discord_name.ilike.*'+t+'*').limit(20);
+  const {data,error}=r;
+  if(error){box.append(mk('div','empty',errMsg(error)));return}
+  if(!data.length){box.append(mk('div','empty','Ninguém encontrado com "'+t+'".'));return}
+  data.forEach(p=>{
+    const ativos=ADS.filter(a=>a.user_id===p.id&&a.status==='ativo').length;
+    const r=mk('div','row'),info=mk('div');r.style.gridTemplateColumns='minmax(0,1fr) auto';
+    info.append(mk('b',null,(p.origins_nick||p.discord_name||'Sem nick')+(p.is_admin?' (admin)':'')),mk('small',null,'@'+(p.discord_user||'?')+(p.origins_hotel?' · Origins '+hotelTag(p.origins_hotel):'')+' · '+ativos+' de '+p.feira_limit+' anúncios ativos'+(p.banned?' · BANIDO':'')));
+    const li=mk('input','hin');li.type='number';li.min=0;li.max=1000;li.value=p.feira_limit;li.style.width='84px';li.setAttribute('aria-label','Limite de anúncios');
+    const acts=mk('div','acts');
+    acts.append(li,btn('hb sm go','Salvar limite',async()=>{const v=parseInt(li.value,10);if(!(v>=0)){toast('Coloque um número');return}const {error}=await sb.rpc('feira_mod_limite',{p_user:p.id,p_limite:v});if(error){toast(errMsg(error));return}toast('Limite agora é '+v);if(p.id===me.id)me.limit=v;findUsers()}));
+    if(!p.is_admin)acts.append(btn('hb sm '+(p.banned?'blue':'red'),p.banned?'Desbanir':'Banir',async()=>{const {error}=await sb.rpc('feira_mod_banir',{p_user:p.id,p_ban:!p.banned});if(error){toast(errMsg(error));return}toast(p.banned?'Desbanido':'Banido e anúncios removidos');await loadAds();findUsers()}));
+    r.append(info,acts);box.append(r);
+  });
+}
+$('mod-find').onclick=findUsers;
+$('mod-q').onkeydown=e=>{if(e.key==='Enter')findUsers()};
+
+/* ---------- abas e navegação ---------- */
+const VIEWS=['feira','meus','mod'];
+function renderTabs(){
+  const box=$('tabs');box.innerHTML='';
+  const n=PENDING.length+REPORTS.length;
+  [
+    ['Início','stall',()=>{setCat('all');go('feira')},view==='feira'&&cat!=='raro'&&cat!=='mobi'],
+    ['Raros','throne',()=>{setCat('raro');go('feira')},view==='feira'&&cat==='raro'],
+    ['Mobis','sofa',()=>{setCat('mobi');go('feira')},view==='feira'&&cat==='mobi'],
+    me&&['Meus anúncios','gift',()=>go('meus'),view==='meus'],
+    me&&me.admin&&['Moderação','shield',()=>go('mod'),view==='mod',n],
+    ['Como funciona','lamp',howSheet,false]
+  ].filter(Boolean).forEach(([l,art,fn,on,badge])=>{
+    const b=btn('tab',l,fn);
+    if(badge)b.append(mk('b',null,String(badge)));
+    if(on)b.setAttribute('aria-current','page');box.append(b);
+  });
+}
+function renderAll(){renderTiles();renderAds();renderNews();renderMine();renderMod();renderTabs()}
+function go(v){
+  if((v==='meus'||v==='mod')&&!me){loginSheet({t:'go',v});return}
+  if(v==='mod'&&!me.admin)v='feira';
+  const changed=view!==v;view=v;
+  VIEWS.forEach(k=>$('v-'+k).hidden=k!==v);
+  // mantém o "?code=" da volta do Discord: o Supabase lê ele para concluir o login
+  if(location.hash!=='#'+v)history.replaceState(null,'',location.pathname+location.search+'#'+v);
+  if(changed&&v==='mod')loadMod();
+  renderTabs();
+}
+document.querySelectorAll('[data-ann]').forEach(b=>b.onclick=()=>annStart());
+$('allBtn').onclick=()=>setCat('all');
+$('q').oninput=e=>{q=e.target.value.trim().toLowerCase();renderAds()};
+$('sort').onchange=e=>{srt=e.target.value;renderAds()};
+window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(VIEWS.includes(v)&&v!==view)go(v)});
+
+// contador de visitas: só números por dia; o admin não conta
+(function countVisit(){
+  if(!sb||/[?&]code=/.test(location.search))return;
+  let skip=false,novo=true;const d=new Date().toLocaleDateString('sv-SE',{timeZone:'America/Sao_Paulo'});
+  try{skip=localStorage.getItem('fo-nao-contar')==='1';novo=localStorage.getItem('fo-visita')!==d;localStorage.setItem('fo-visita',d)}catch(e){}
+  if(!skip)sb.rpc('feira_registrar_visita',{p_novo:novo}).then(()=>{},()=>{});
+})();
+
+
+// notícias do Origins: o próprio site oficial lê este arquivo do CDN do Habbo (liberado para qualquer site).
+// Só título, data, resumo curto e link para a matéria; se o formato mudar, a caixinha some.
+(async function originsNews(){
+  try{
+    const r=await fetch('https://images.habbo.com/origins-habbo-web-news/pt/origins/front.html');if(!r.ok)return;
+    const doc=new DOMParser().parseFromString(await r.text(),'text/html'),box=$('onews');
+    const items=[...doc.querySelectorAll('article')].map(a=>{
+      const t=a.querySelector('.news-header__title'),l=a.querySelector('a[href^="/community/article/"]'),d=(a.querySelector('.news-header__date')||{}).textContent||'';
+      const im=a.querySelector('img.news-header__image--thumbnail'),sm=a.querySelector('.news-header__summary');
+      const ms=(d.match(/\d{12,14}/)||[])[0];
+      return t&&l?{title:t.textContent.trim(),href:'https://origins.habbo.com.br'+l.getAttribute('href'),date:ms?new Date(+ms):null,
+        img:im&&/^https:\/\/images\.habbo\.com\//.test(im.getAttribute('src'))?im.getAttribute('src'):'',sum:sm?sm.textContent.replace(/\s+/g,' ').trim():''}:null;
+    }).filter(Boolean).slice(0,5);
+    if(!items.length)return;
+    items.forEach(n=>{
+      const a=mk('a');a.href=n.href;a.target='_blank';a.rel='noopener noreferrer';
+      const im=mk('img');im.alt='';im.loading='lazy';im.referrerPolicy='no-referrer';if(n.img)im.src=n.img;else im.style.visibility='hidden';
+      const tx=mk('div'),h=mk('div');
+      if(/^raro\b/i.test(n.title))h.append(mk('em',null,'raro'));
+      h.append(mk('b',null,n.title.replace(/^raro:\s*/i,'')));
+      tx.append(h,mk('small',null,(n.date?dia(n.date)+' · ':'')+(n.sum.length>110?n.sum.slice(0,107).trim()+'...':n.sum)));
+      a.append(im,tx);box.append(a);
+    });
+    $('newsBox').hidden=false;
+  }catch(e){}
+})();
+
+/* ---------- início ---------- */
+const h0=location.hash.slice(1);
+go('feira');
+if(h0==='meus'||h0==='mod')pendingView=h0;
+renderAll();
+if(sb){
+  let first=true;
+  sb.auth.onAuthStateChange((ev,session)=>{
+    if(ev==='INITIAL_SESSION'||ev==='SIGNED_IN'||ev==='SIGNED_OUT'){
+      if(ev==='SIGNED_IN'&&!first&&me&&session&&me.id===session.user.id)return;
+      first=false;setTimeout(()=>onSession(session),0);
+    }
+  });
+}else loadAds();
+})();
+</script>
+</body>
+</html>
